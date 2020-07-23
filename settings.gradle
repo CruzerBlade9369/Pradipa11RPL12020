@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "Pradipa-11RPL1-2020"

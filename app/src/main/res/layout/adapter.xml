@@ -17,8 +17,8 @@
 
         <ImageView
             android:id="@+id/ivprofile"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
             android:src="@mipmap/ic_launcher"/>
 
         <LinearLayout

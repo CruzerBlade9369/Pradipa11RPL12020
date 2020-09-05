@@ -13,6 +13,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
     CardView menu1;
     CardView menu2;
+    CardView menu3;
     Button testbutton;
 
     @Override
@@ -26,22 +27,25 @@ public class MainMenuActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), ListData.class));
             }
         });
+
         menu2 = (CardView)findViewById(R.id.menu2);
         menu2.setOnClickListener((new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(getApplicationContext(), "test", Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(getApplicationContext(), "Null", Toast.LENGTH_LONG);
                 toast.show();
             }
         }));
-        testbutton = (Button)findViewById(R.id.testbutton);
-        testbutton.setOnClickListener(new View.OnClickListener(){
+
+        menu3 = (CardView)findViewById(R.id.menu3);
+        menu3.setOnClickListener((new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), ListData.class));
+                Toast toast = Toast.makeText(getApplicationContext(), "Null", Toast.LENGTH_LONG);
+                toast.show();
             }
-        });
+        }));
     }
 }

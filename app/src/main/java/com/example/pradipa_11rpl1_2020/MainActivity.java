@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etusername;
     EditText etpassword;
     Button btnlogin;
+    Button btnregist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         etusername = (EditText)findViewById(R.id.etusername);
         etpassword = (EditText)findViewById(R.id.etpassword);
         btnlogin = (Button)findViewById(R.id.btnlogin);
+        btnregist = (Button)findViewById((R.id.btnregist));
         btnlogin.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -43,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
 
                     finish();
                 }
+            }
+        });
+        btnregist.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
             }
         });
     }

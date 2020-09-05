@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,7 +20,7 @@ import com.bumptech.glide.request.target.Target;
 
 import java.util.ArrayList;
 
-public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DatakuViewHolder> {
+public class DataAdapter extends RecyclerView.Adapter<DataAdapter.MydataViewHolder> {
     private ArrayList<Model> dataList;
     private Callback callback;
     View myView;
@@ -36,19 +37,19 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DatakuViewHold
         this.dataList = dataList;
         Log.d("moviedb", "DataAdapter: "+dataList.size()+"");
     }
-
+    
     @Override
-    public DatakuViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MydataViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.adapter, parent, false);
-        return new DatakuViewHolder(view);
+        return new MydataViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(final DatakuViewHolder holder, final int position) {
+    public void onBindViewHolder(final MydataViewHolder holder, final int position) {
         holder.txtname.setText(dataList.get(position).getOriginal_title());
         holder.txtdesc.setText(dataList.get(position).getOverview());
-        Log.d("mymovie", "onBindViewHolder: "+dataList.get(position).getPoster_path());
+        Log.d("movie", "onBindViewHolder: "+dataList.get(position).getPoster_path());
         Glide.with(holder.itemView)
                 .load(dataList.get(position).getPoster_path())
                 .override(Target.SIZE_ORIGINAL)
@@ -62,12 +63,12 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DatakuViewHold
         return (dataList != null) ? dataList.size() : 0;
     }
 
-    public class DatakuViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{
+    public class MydataViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{
         private TextView txtname, txtdesc;
         CardView card;
         ImageView ivprofile;
 
-        public DatakuViewHolder(View itemView) {
+        public MydataViewHolder(View itemView) {
             super(itemView);
             myView =itemView;
             card = (CardView) itemView.findViewById(R.id.myCard);

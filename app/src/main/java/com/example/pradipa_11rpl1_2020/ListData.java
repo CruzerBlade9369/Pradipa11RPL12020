@@ -9,17 +9,17 @@ import android.widget.ImageView;
 
 import java.util.ArrayList;
 
-class ListData extends AppCompatActivity {
+public class ListData extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private DataAdapter adapter;
     private ArrayList<Model> DataArrayList; //kit add kan ke adapter
-    private ImageView add_data;
+    private ImageView tambah_data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_datalist);
+        setContentView(R.layout.activity_list_data);
         recyclerView = (RecyclerView) findViewById(R.id.rvdata);
         addData();
     }
@@ -28,10 +28,10 @@ class ListData extends AppCompatActivity {
         //offline, isi data offline dulu
         DataArrayList = new ArrayList<>();
         Model data1 = new Model();
-        data1.setOriginal_title("Title here");
+        data1.setOriginal_title("Movie Title");
         data1.setPoster_path("https://image.tmdb.org/t/p/w500/k68nPLbIST6NP96JmTxmZijEvCA.jpg");
         data1.setAdult(false);
-        data1.setOverview("Description here");
+        data1.setOverview("Movie Description");
         data1.setVote_count(0);
         data1.setRelease_date("01-01-1970");
         DataArrayList.add(data1);

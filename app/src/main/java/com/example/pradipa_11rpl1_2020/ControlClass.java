@@ -13,7 +13,6 @@ public class ControlClass extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_control_class);
         sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
         if (sharedPreferences.getString("username", "").isEmpty() ||
         sharedPreferences.getString("username", "").equalsIgnoreCase("")){
